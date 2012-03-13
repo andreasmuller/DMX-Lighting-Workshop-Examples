@@ -5,7 +5,7 @@
 void testApp::setup()
 {
 	currentImagePixels = NULL;
-	changeImage("lena.jpg");
+	changeImage( "lena.jpg" );
 	
 	rgbLightAmount = 16;
 	colors = new ofColor[rgbLightAmount];
@@ -17,7 +17,12 @@ void testApp::setup()
 	dmxPacket = new unsigned char[dmxPacketLength];
 	for( int i = 0; i < dmxPacketLength; i++ ) { dmxPacket[i] = 0; }	// clear it
 	
-	string serialPortAddress = "/dev/tty.usbserial-EN079717";
+	#ifdef TARGET_WIN32
+		string serialPortAddress = "COM3";
+	#else
+		string serialPortAddress = "/dev/tty.usbserial-EN079717";
+	#endif
+
 	bool isConnected = dmxOut.connect(serialPortAddress, dmxPacketLength);  
 	if( !isConnected )
 	{
@@ -102,6 +107,8 @@ void testApp::draw()
 //
 void testApp::changeImage( string _path )
 {
+	cout << "Loading an image from: " << _path << endl;
+
 	currentImage.loadImage( _path );
 	currentImagePixels = currentImage.getPixels(); // 
 }
