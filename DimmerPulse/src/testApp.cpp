@@ -12,7 +12,12 @@ void testApp::setup()
 	for( int i = 0; i < dmxPacketLength; i++ ) { dmxPacket[i] = 0; }
 	
 	
-	string serialPortAddress = "/dev/tty.usbserial-EN079717";
+	#ifdef TARGET_WIN32
+		string serialPortAddress = "COM3";
+	#else
+		string serialPortAddress = "/dev/tty.usbserial-EN079717";
+	#endif
+
 	bool isConnected = dmxOut.connect(serialPortAddress, dmxPacketLength);  
 	if( !isConnected )
 	{
