@@ -8,14 +8,15 @@
 class testApp : public ofBaseApp 
 {
 	public:
-	void setup();
-	void update();
-	void draw();
 	
-	int 			dmxPacketLength;
-	unsigned char* 	dmxPacket;
+		void 			setup();
+		void 			update();
+		
+	
+		int 			dmxChannelAmount;
+		unsigned char* 	dmxPacket;
 
-	DmxPro 			dmxOut;
+		DmxPro 			dmxOut;
 	
 };
 
