@@ -4,15 +4,14 @@
 #include "ofMain.h"
 #include "Utils/DmxPro.h"
 
-
+//--------------------------------------------------------------
 class testApp : public ofBaseApp 
 {
 	public:
 	
 		void 			setup();
 		void 			update();
-		
-	
+			
 		int 			dmxChannelAmount;
 		unsigned char* 	dmxPacket;
 

@@ -28,7 +28,8 @@ void testApp::setup()
 	dmxPacket = new unsigned char[dmxChannelAmount];
 	for( int i = 0; i < dmxChannelAmount; i++ ) { dmxPacket[i] = 0; }	// clear it
 	
-	// Set the address, depending on whether we are on OSX or Windows, this might be different on your machine!
+	// Set the address, depending on whether we are on OSX or Windows,
+	// this might be different on your machine!
 	#ifdef TARGET_WIN32
 		string serialPortAddress = "COM3";
 	#else
@@ -71,7 +72,8 @@ void testApp::update()
 		if( mouseY >= 0	  && mouseY   < currentImage.getHeight() &&
 		    currentX >= 0 && currentX < currentImage.getWidth()  )  
 		{
-			int pixelIndex = ((mouseY * currentImage.getWidth()) + currentX) * 3; // ((Y * Image Width) + X) * Bytes per pixel
+			// ((Y position * Image Width) + X position) * Bytes per pixel
+			int pixelIndex = ((mouseY * currentImage.getWidth()) + currentX) * 3;
 			
 			colors[i].r = currentImagePixels[pixelIndex    ];
 			colors[i].g = currentImagePixels[pixelIndex + 1];
@@ -93,7 +95,6 @@ void testApp::update()
 	
 	// Send them channel values to the DMX box
 	dmxOut.sendLevels( dmxPacket, dmxChannelAmount );
-
 }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,48 +152,3 @@ void testApp::mouseMoved(int x, int y )
 	mouseX = x;
 	mouseY = y;	
 }
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::mouseDragged(int x, int y, int button)
-{	
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::mousePressed(int x, int y, int button)
-{	
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::mouseReleased(int x, int y, int button)
-{
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::keyPressed  (int key)
-{ 	
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::keyReleased(int key)
-{ 	
-}
-
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::windowResized(int w, int h)
-{
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-void testApp::gotMessage(ofMessage msg)
-{
-}
-
-
