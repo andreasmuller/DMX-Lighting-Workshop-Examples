@@ -7,12 +7,14 @@ void testApp::setup()
 	
 	ofSetCircleResolution( 50 ); // nicer circles
 	
-	dmxChannelAmount = DIMMER_POINT_AMOUNT + 1; // the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
+	// the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
+	dmxChannelAmount = DIMMER_POINT_AMOUNT + 1;
 	
 	dmxPacket = new unsigned char[ dmxChannelAmount ];
 	for( int i = 0; i < dmxChannelAmount; i++ ) { dmxPacket[i] = 0; }
 	
-	// Set the address, depending on whether we are on OSX or Windows, this might be different on your machine!
+	// Set the address, depending on whether we are on OSX or Windows,
+	// this might be different on your machine!
 #ifdef TARGET_WIN32
 	string serialPortAddress = "COM3";
 #else
@@ -41,15 +43,14 @@ void testApp::setup()
 	dimmerPointAffectionRadius = 160.0f;
 	
 	mouseX = 0;
-	mouseY = 0;
-	
+	mouseY = 0;	
 }
 
 //--------------------------------------------------------------
 void testApp::update()
 {
 	
-	// Check the distance to each point, if we are under 'dimmerPointAffectionRadius'
+	// Check the distance to each point, if we are closer than 'dimmerPointAffectionRadius'
 	// then adjust intensity of the light accordingly
 	
 	for( int i = 0; i < DIMMER_POINT_AMOUNT; i++ ) 
@@ -82,7 +83,6 @@ void testApp::update()
 //--------------------------------------------------------------
 void testApp::draw()
 {    
-
 	for( int i = 0; i < DIMMER_POINT_AMOUNT; i++ )
 	{
 		ofSetColor( 255, 255, 255 );
@@ -106,67 +106,8 @@ void testApp::draw()
 
 
 //--------------------------------------------------------------
-void testApp::exit()
-{
-
-}
-
-//--------------------------------------------------------------
-void testApp::keyPressed(int key)
-{
-    switch (key) 
-    {
-		case '1':
-        	
-			break;
-			
-        default:
-            break;
-    }
-}
-//--------------------------------------------------------------
-void testApp::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y )
 { 
 	mouseX = x;
 	mouseY = y;	
-}
-
-//--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button)
-{
- 
-}
-
-//--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button)
-{
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button)
-{
-
-}
-
-//--------------------------------------------------------------
-void testApp::windowResized(int w, int h)
-{
- 
-
-}
-
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
 }

@@ -9,7 +9,8 @@ void testApp::setup()
 	initSliders16();	
 	initSliders48();	
     
-	dmxPacketLength = 48 + 1; // the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
+	// the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
+	dmxPacketLength = 48 + 1;
 	dmxPacket = new unsigned char[ dmxPacketLength ];
 	for( int i = 0; i < dmxPacketLength; i++ ) { dmxPacket[i] = 0; }
 
@@ -156,11 +157,6 @@ void testApp::initSliders48()
 }
 
 
-//--------------------------------------------------------------
-void testApp::exit()
-{
-
-}
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key)
@@ -184,48 +180,4 @@ void testApp::keyPressed(int key)
             break;
     }
 }
-//--------------------------------------------------------------
-void testApp::keyReleased(int key){
 
-}
-
-//--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y )
-{ 
-	
-}
-
-//--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button)
-{
- 
-}
-
-//--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button)
-{
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button)
-{
-
-}
-
-//--------------------------------------------------------------
-void testApp::windowResized(int w, int h)
-{
- 
-
-}
-
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
-}

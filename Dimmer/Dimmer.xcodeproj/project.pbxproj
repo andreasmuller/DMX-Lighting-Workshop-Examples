@@ -326,6 +326,7 @@
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -355,6 +356,7 @@
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
@@ -441,6 +443,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Dimmer;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -527,6 +530,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Dimmer;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
