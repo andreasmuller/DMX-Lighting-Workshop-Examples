@@ -3,6 +3,7 @@
 
 #include "ofMain.h"
 #include "Utils/DmxPro.h"
+#include "Utils/AudioInputVolume.h"
 
 //--------------------------------------------------------------
 class testApp : public ofBaseApp 
@@ -20,17 +21,8 @@ class testApp : public ofBaseApp
 
 		DmxPro 			dmxOut;
 	
-		vector <float> 	left;
-		vector <float> 	right;
-		vector <float> 	volHistory;
-		
-		int 			bufferCounter;
-		int 			drawCounter;
-		
-		float 			smoothedVol;
-		float 			scaledVol;
-		
 		ofSoundStream 	soundStream;
+		AudioInputVolume inputVolume;
 	
 };
 

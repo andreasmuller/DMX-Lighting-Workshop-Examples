@@ -1,3 +1,4 @@
+
 #include "testApp.h"
 
 //--------------------------------------------------------------
@@ -14,7 +15,7 @@ void testApp::setup()
 	for( int i = 0; i < dmxChannelAmount; i++ ) { dmxPacket[i] = 0; }
 	
 	// Set the address, depending on whether we are on OSX or Windows,
-	// this might be different on your machine!
+	// the adddress might be different on your machine!
 	#ifdef TARGET_WIN32
 		string serialPortAddress = "COM3";
 	#else
@@ -28,8 +29,7 @@ void testApp::setup()
 	if( !isConnected )
 	{
 		ofLogError() << "We failed to connect to " << serialPortAddress << endl;
-	}	
-	
+	}		
 	
 }
 

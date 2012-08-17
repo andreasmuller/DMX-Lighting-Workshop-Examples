@@ -7,11 +7,7 @@ void testApp::setup()
 	
 	// set this to NULL so we can check for that
 	currentImagePixels = NULL;
-	
-	// Start with an image
-	changeImage( "color-spectrum.jpeg" );
-	
-	
+		
 	rgbLightAmount = 16;
 	
 	// allocate the right amount of color objects
@@ -45,6 +41,8 @@ void testApp::setup()
 		ofLogError() << "We failed to connect to " << serialPortAddress << endl;
 	}	
 	
+	// Start with an image
+	changeImage( "color-spectrum.jpeg" );
 }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,7 +80,6 @@ void testApp::update()
 			currentX++;
 		}
 	}
-	
 	
 	// Copy from our ofColors to the byte array we use as a DMX packet
 	int tmpIndex = 1;

@@ -7,7 +7,7 @@ void testApp::setup()
 	
 	ofSetCircleResolution( 50 ); // nicer circles
 	
-	// the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
+	// The maximum amount of sliders we'll make + 1 as DMX channels start at address 1
 	dmxChannelAmount = DIMMER_POINT_AMOUNT + 1;
 	
 	dmxPacket = new unsigned char[ dmxChannelAmount ];
@@ -21,7 +21,7 @@ void testApp::setup()
 	string serialPortAddress = "/dev/tty.usbserial-EN079717";
 #endif
 	
-	//Try to connect to that address, also give it the amount of channels we will be using
+	// Try to connect to that address, also give it the amount of channels we will be using
 	bool isConnected = dmxOut.connect(serialPortAddress, dmxChannelAmount );  
 	
 	// Output an error to the console if we fail
@@ -67,7 +67,6 @@ void testApp::update()
 		{
 			dimmerPointIntensity[i] = 0.0f; 			
 		}
-
 	}
 
 	// fill in the values in the DMX packet
