@@ -87,7 +87,7 @@ bool DmxPro::connect(string device, int channels)
 	//_initialized = false;
 	setup(channels);
 	_port.enumerateDevices();
-	_port.setVerbose(false);
+	//_port.setVerbose(false);
 	_connected = _port.setup(device.c_str(), 57600); 
 	return _connected;
 }

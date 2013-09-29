@@ -1,9 +1,12 @@
-#ifndef TESTAPP
-#define TESTAPP
+#pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
+
 #include "Utils/DmxPro.h"
-#include "ofxUI.h"
+
+
+#define SLIDER_AMOUNT 32
 
 class testApp : public ofBaseApp 
 {
@@ -13,23 +16,15 @@ class testApp : public ofBaseApp
 	void 			update();
 	void 			draw();
 
-	void 			showGUI( int _num );
-	
-	void 			initSliders16();	
-	void 			initSliders48();	
-	
 	void 			keyPressed  (int key);
 
-	void 			guiEvent(ofxUIEventArgs &e);	
-	
-	ofxUICanvas* 	guiSliders16;   	
-	ofxUICanvas* 	guiSliders48;   	
-	
+	ofParameter<int> sliderValues[SLIDER_AMOUNT];
+
 	int 			dmxPacketLength;
 	unsigned char* 	dmxPacket;
 
 	DmxPro 			dmxOut;
+
+	ofxPanel		gui;
 	
 };
-
-#endif
