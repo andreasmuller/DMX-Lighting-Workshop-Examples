@@ -5,8 +5,6 @@ void testApp::setup()
 {
 	ofSetVerticalSync(true); 
 	ofEnableSmoothing(); 
-    	
-
     
 	// the maximum amount of sliders we'll make + 1 as DMX channels start at address 1
 	dmxPacketLength = 16 + 1;

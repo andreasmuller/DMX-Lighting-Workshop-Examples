@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D5831C7E-13C4-4D95-A49D-028375E4E2A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>emptyExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D55ADFC7-CC49-43D6-A338-EE21D0C1ED6E</key>
+		<string>https://github.com/andreasmuller/DMX-Lighting-Workshop-Examples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ImageToLights/emptyExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D55ADFC7-CC49-43D6-A338-EE21D0C1ED6E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/andreasmuller/DMX-Lighting-Workshop-Examples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D55ADFC7-CC49-43D6-A338-EE21D0C1ED6E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D55ADFC7-CC49-43D6-A338-EE21D0C1ED6E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DMX-Lighting-Workshop-Examples</string>
+		</dict>
+	</array>
+</dict>
+</plist>
