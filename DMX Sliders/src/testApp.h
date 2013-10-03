@@ -6,7 +6,7 @@
 #include "Utils/DmxPro.h"
 
 
-#define SLIDER_AMOUNT 32
+#define SLIDER_AMOUNT 4
 
 class testApp : public ofBaseApp 
 {
@@ -15,8 +15,6 @@ class testApp : public ofBaseApp
 	void 			setup();
 	void 			update();
 	void 			draw();
-
-	void 			keyPressed  (int key);
 
 	ofParameter<int> sliderValues[SLIDER_AMOUNT];
 
