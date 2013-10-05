@@ -6,7 +6,7 @@
 #include "Utils/DmxPro.h"
 
 
-#define SLIDER_AMOUNT 4
+#define SLIDER_AMOUNT 32
 
 class testApp : public ofBaseApp 
 {
@@ -15,7 +15,8 @@ class testApp : public ofBaseApp
 	void 			setup();
 	void 			update();
 	void 			draw();
-
+	void 			exit();
+	
 	ofParameter<int> sliderValues[SLIDER_AMOUNT];
 
 	int 			dmxPacketLength;

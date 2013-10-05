@@ -13,13 +13,10 @@ void testApp::setup()
 	// Make sure they start at 0
 	for( int i = 0; i < dmxChannelAmount; i++ ) { dmxPacket[i] = 0; }
 	
-	// Set the address, depending on whether we are on OSX or Windows,
-	// this might be different on your machine!
-	#ifdef TARGET_WIN32
-		string serialPortAddress = "COM3";
-	#else
-		string serialPortAddress = "/dev/tty.usbserial-EN079717";
-	#endif
+
+	//string serialPortAddress = "/dev/tty.usbserial-EN079717";
+	string serialPortAddress = "/dev/tty.usbserial-EN099611";
+
 
 	// Try to connect to that address, also give it the amount of channels we will be using
 	bool isConnected = dmxOut.connect(serialPortAddress, dmxChannelAmount );  
@@ -36,9 +33,7 @@ void testApp::setup()
 	//soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
 	
 	int bufferSize = 256;
-		
 	inputVolume.init( bufferSize );
-	
 	soundStream.setup(this, 0, 2, 44100, bufferSize, 4);
 }
 
@@ -52,6 +47,8 @@ void testApp::update()
 	
 	// Set each of the channels to that value
 	for( int i = 0; i < dmxChannelAmount; i++ ) { dmxPacket[i] = tmpValue; }
+	
+	//dmxPacket[1] = 255-dmxPacket[1];
 	
 	// Send it to the DMX box
 	dmxOut.sendLevels( dmxPacket, dmxChannelAmount );
